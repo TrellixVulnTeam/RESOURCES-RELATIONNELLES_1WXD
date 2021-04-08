@@ -1,3 +1,13 @@
+
+import * as Authentification from './controllers/AuthenticationService.js';
+import {app} from "./controllers/Categories.js";
+import {app} from "./controllers/Comment.js";
+import {app} from "./controllers/Ressources.js";
+import {app} from "./controllers/TypeOfRessources.js";
+import {app} from "./controllers/User.js";
+
+Authentification.Michel();
+
 require('dotenv').config()
 
 const cors = require('cors')
@@ -27,4 +37,6 @@ app.use(express.json())
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
+
+
 

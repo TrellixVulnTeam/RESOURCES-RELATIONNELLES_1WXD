@@ -1,3 +1,6 @@
+
+  import TypeOfRessource from "./models/TypeOfRessource"
+  
 //------------------------------------------------------------------- Type Of Ressource - Add -------------------------------------------------------------------//
 
 app.post('/addTypeOfRessource', (req, res) => {
@@ -41,8 +44,6 @@ app.post('/DeleteTypeOfRessource', (req, res) => {
 })
 
 //------------------------------------------------------------------- Type Of Ressource - GetOne -------------------------------------------------------------------//
-
-
 
 app.post('/getOneTypeOfRessource', (req, res) => {
   TypeOfRessource.findOne({ _id: req.body.RessourceId }, function (err, obj) {

@@ -1,3 +1,5 @@
+import Categories from "./models/Categories"
+
 //------------------------------------------------------------------- Categories - Add -------------------------------------------------------------------//
 
 app.post('/addCategories', (req, res) => {
@@ -40,7 +42,8 @@ app.post('/addCategories', (req, res) => {
     })
   })
   
-  
+  import Categories from "./models/Categories"
+
   //------------------------------------------------------------------- Categories - Edit -------------------------------------------------------------------//
   
   
