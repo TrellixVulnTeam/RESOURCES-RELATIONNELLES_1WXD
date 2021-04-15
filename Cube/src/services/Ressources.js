@@ -2,42 +2,25 @@ import Api from './Api'
 
 export default {
     addRessource(data){
-        return Api().post('addRessource', data)
+        return Api().post('addResource', data)
     },
     getRessources(){
-        return Api().post('getAllRessources')
+        return Api().post('getAllResources')
     },
     getOneRessource(id){
-        return Api().post('getOneRessource', id)
+        return Api().post('getOneResource', id)
     },
     getUserRessources(){
-        return Api().post('getUserRessources')
+        return Api().post('getUserResources')
     },
     deleteRessource(id){
-        return Api().post('deleteRessources', id)
+        return Api().post('deleteResource', id)
     },
     updateRessource(data){
-        return Api().post('editRessource', data)
+        return Api().post('editResource', data)
     },
-    ExploitedRessource(data){
-        return Api().post('ExploitedRessource', data)
-    },
-    UnExploitedRessource(data){
-        return Api().post('UnExploitedRessource', data)
-    },
-    FavRessource(data){
-        return Api().post('FavRessource', data)
-    },
-    IsFav(){
-        return Api().post('IsFav')
-    },    
     RessourceByCat(NomCat){
-        return Api().post('RessourceByCat', NomCat)
+        return Api().post('ResourceByCat', NomCat)
     },
-    GetAllFav(idRessource){
-        return Api().post('getAllFav',idRessource)
-    }
-
-
 }
 

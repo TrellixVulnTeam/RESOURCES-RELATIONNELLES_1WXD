@@ -1,21 +1,10 @@
-
-import * as Authentification from './controllers/AuthenticationService.js';
-import {app} from "./controllers/Categories.js";
-import {app} from "./controllers/Comment.js";
-import {app} from "./controllers/Ressources.js";
-import {app} from "./controllers/TypeOfRessources.js";
-import {app} from "./controllers/User.js";
-
-Authentification.Michel();
-
 require('dotenv').config()
 
-const cors = require('cors')
-const express = require('express')
-const bodyParser = require('body-parser')
+const cors = require('cors');
+const express = require('express');
+const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
-const MD5 = require('crypto-js/md5')
 
 const app = express()
 const port = 8080
@@ -30,6 +19,8 @@ mongoose.connect('mongodb://localhost/ravenclaw', function (err) {
   else { console.log("connecté à la base de données") }
 });
 
+
+
 app.use(cors())
 app.use(bodyParser.json())
 app.use(express.json())
@@ -38,5 +29,8 @@ app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
-
-
+require('./controllers/Controller.AuthenticationService.js')(app, jwt, mongoose);
+require('./controllers/Controller.Resources.js')(app, jwt, mongoose);
+require('./controllers/Controller.Comments.js')(app, jwt, mongoose);
+require('./controllers/Controller.Categories.js')(app, mongoose);
+require('./controllers/Controller.TypeOfResources.js')(app, mongoose);
